@@ -1,0 +1,117 @@
+Protect Websites With .htaccess:
+
+.htaccess code inject in WordPress Website
+* Edit default .htaccess file with following code
+
+1. Configuring the .htaccess file
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ – [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
+
+
+
+2. Protect .htaccess
+
+# Protect .HTACCESS
+
+<Files ~ “^.*\.([Hh][Tt][Aa])”>
+order allow,deny
+deny from all
+satisfy all
+</Files>
+
+
+3. Protect wp-config.php
+
+# WP-CONFIG BLOCK
+
+<Files wp-config.php>
+order allow,deny
+deny from all
+</Files>
+
+
+4. No directory browsing: It will block browsing directories
+
+# directory browsing block
+Options All -Indexes
+
+
+5. Disable XMLRPC.PHP
+
+# Disable XMLRPC.PHP
+
+<Files xmlrpc.php>
+
+order deny,allow
+
+deny from all
+
+</Files>
+
+
+6. Disable scanners in Your Website:
+
+# BEGIN block author scans
+
+RewriteEngine On
+
+RewriteBase /
+
+RewriteCond %{QUERY_STRING} (author=\d+) [NC]
+
+RewriteRule .* – [F]
+
+# END block author scans
+
+
+
+7. Block Suspicious IP
+
+# IP block
+
+order allow, deny
+deny from (IP)
+allow from all
+
+
+8. Individual File Protection
+
+# Protect the .htaccess
+<files .htaccess=””>
+order allow,deny
+deny from all
+</files>
+
+
+9. wp-content Access Prevention
+
+# wp-content access deny
+
+Order deny,allow
+Deny from all
+<Files ~ “.(xml|css|jpe?g|png|gif|js)$”>
+Allow from all
+</Files>
+
+ 
+10. Uploads Directory Access Blocking
+
+# uploads directory access deny
+
+<Files *.php>
+deny from all
+</Files>
+# Block executables
+<FilesMatch “\.(php|phtml|php3|php4|php5|pl|py|jsp|asp|html|htm|shtml|sh|cgi|suspected)$”>
+deny from all
+</FilesMatch>
+
