@@ -1,0 +1,97 @@
+HTTP Headers Security Included with those points:
+
+● Cross Site Scripting Protection (X-XSS)
+● Content Security Policy (CSP)
+● Browser Sniffing Protection (X-Content-Type-Options)
+● Clickjacking Prevention (X-Frame-Options)
+● HTTP Strict Transport Security (HSTS)
+● HTTP Public Key Pinning (HPKP)
+● Referring Settings (Referrer-Policy)
+● Cookie Settings (Set-Cookie)
+
+
+HTTP Headers Security Tools
+
+● Check HTTP Security Headers: www.securityheaders.com
+● Check HTTP Strict Transport Security / HSTS: www.hstspreload.org
+● Check WebPageTest: www.webpagetest.org
+● Check HSTS test website: https://gf.dev/hsts-test
+
+
+
+Headers Security Advanced Plugins
+
+● Plugin: Headers Security Advanced Plugin: https://wordpress.org/plugins/headers-security-advanced-hsts-wp/
+
+
+Headers Security Advanced Features
+
+● HSA Limit Login to block brute force attacks.
+● X-XSS-Protection
+● Expect-CT
+● Access-Control-Allow-Origin
+● Access-Control-Allow-Methods
+● Access-Control-Allow-Headers
+● X-Content-Security-Policy
+● X-Content-Type-Options
+● X-Frame-Options
+● X-Permitted-Cross-Domain-Policies
+● X-Powered-By
+● Content-Security-Policy
+● Referrer-Policy
+● HTTP Strict Transport Security / HSTS
+● Content-Security-Policy
+● Clear-Site-Data
+● Cross-Origin-Embedder-Policy-Report-Only
+● Cross-Origin-Opener-Policy-Report-Only
+● Cross-Origin-Embedder-Policy
+● Cross-Origin-Opener-Policy
+● Cross-Origin-Resource-Policy
+● Permissions-Policy
+● Strict-dynamic
+● Strict-Transport-Security
+● FLoC (Federated Learning of Cohorts)
+
+ 
+
+Headers Security Advanced Plugin Install & Configure:
+ 
+
+● Install the plugin: https://wordpress.org/plugins/headers-security-advanced-hsts-wp/
+● WordPress Dashboard > Settings > Headers Security Advanced & HSTS WP
+
+
+
+OR Manually Root .htaccess Push those code:
+
+
+# Headers Security Advanced & HSTS WP – 5.0.02
+<IfModule mod_headers.c>
+Header always set Strict-Transport-Security “max-age=63072000; includeSubDomains; preload”
+Header always set X-XSS-Protection “1; mode=block”
+Header always set X-Content-Type-Options “nosniff”
+Header always set Referrer-Policy “strict-origin-when-cross-origin”
+Header always set Expect-CT “max-age=7776000, enforce”
+Header set Access-Control-Allow-Origin “null”
+Header set Access-Control-Allow-Methods “GET,PUT,POST,DELETE”
+Header set Access-Control-Allow-Headers “Content-Type, Authorization”
+Header set X-Content-Security-Policy “img-src *; media-src * data:;”
+Header always set Content-Security-Policy “report-uri https://malware.freelancersanin.com”
+Header set Cross-Origin-Embedder-Policy-Report-Only ‘unsafe-none; report-to=”default”‘
+Header set Cross-Origin-Embedder-Policy ‘unsafe-none; report-to=”default”‘
+Header set Cross-Origin-Opener-Policy-Report-Only ‘same-origin; report-to=”default”‘
+Header set Cross-Origin-Opener-Policy ‘same-origin; report-to=”default”‘
+Header set Cross-Origin-Resource-Policy ‘cross-origin’
+Header always set X-Frame-Options “SAMEORIGIN”
+Header always set Permissions-Policy “geolocation=(self), microphone=(), accelerometer=(), gyroscope=(), magnetometer=()”
+Header set X-Permitted-Cross-Domain-Policies “none”
+</IfModule>
+# END Headers Security Advanced & HSTS WP
+
+
+
+ 
+Now Check website header security status: https://securityheaders.com/
+
+Hope So it'll be shown GREEN Now...
+Thanks
