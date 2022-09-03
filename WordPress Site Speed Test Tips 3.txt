@@ -1,0 +1,73 @@
+Website speed optimization if one of ranking of google SERP.
+
+-> Website bounce rate, view, conversion depends also site speeed.
+-> Page speed is one of google ranking factors.
+-> For 1 second page speed delay 7% visitor drop, 11% page view lose and
+   16% visitor satisfaction lose.
+
+Factor of Website Speed Optimization:
+➤ Enable compression
+
+➤ Leverage browser caching
+
+➤ Minification and concatenation
+
+➤ GZIP compression
+
+➤ Optimize images
+
+➤ Minify JavaScript
+
+➤ Defer parsing of JavaScript
+
+➤ Combine images CSS sprites
+
+➤ Opcode cache
+
+➤ Minify HTML/CSS/JS
+
+➤ Browser caching
+
+➤ Cache preload
+
+➤ Database cache
+
+➤ Object cache
+
+➤ Browser cache
+
+➤ Integrate with a CDN
+
+➤ Defer JavaScript loading
+
+➤ DNS prefetching
+
+➤ Lazy loading
+
+
+Plugins of Wordpress Speed Optimization
+1. WP Rocket - Using of this if you face any problem then
+   might be edit .htaccess file
+
+2. Perfmatters
+
+3. NitroPack
+
+4. WP Super Cache
+
+5. Autoptimize
+
+6. WP Total Cache
+
+
+Website Performance Checking sites
+
+➤ https://gtmetrix.com/ 
+
+➤ https://developers.google.com/speed/pagespeed/insights/ 
+
+➤ https://tools.pingdom.com/ 
+
+➤ https://www.webpagetest.org 
+
+
